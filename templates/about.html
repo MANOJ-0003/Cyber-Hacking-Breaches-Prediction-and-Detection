@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block title %}About Project{% endblock %}{% block content %}
+<div class="page-heading"><div><div class="eyebrow">PROJECT / SECURITY LAB</div><h1>About <span>Sentinel SOC</span></h1><p>Educational URL screening and monitoring interface.</p></div></div>
+<section class="panel about-panel">
+  <div class="eyebrow">MISSION</div><h2>Offline URL risk screening</h2>
+  <p>Sentinel validates an HTTP or HTTPS address, extracts URL features, and passes them to a locally saved Random Forest model when compatible artifacts are available. It never visits submitted URLs or downloads page content.</p>
+  <div class="about-rule"></div><div class="eyebrow">MODEL SCOPE</div><h2>Offline URL lexical model</h2>
+  <p>The Random Forest is trained from the dataset's labeled raw URLs using the same 13 URL-text features calculated at scan time. The dataset's other precomputed page-content and external-service signals are excluded because they cannot be calculated without visiting sites. The app does not visit submitted URLs.</p>
+  <div class="about-rule"></div><div class="eyebrow">INTERPRETATION</div><h2>Estimates need human review</h2>
+  <p>Model probabilities and risk categories are presentation estimates, not guarantees or calibrated security scores. A legitimate classification does not prove a website is safe. Verify unexpected links through a trusted route.</p>
+  <div class="about-rule"></div><div class="eyebrow">LOCAL STORAGE</div><h2>Scan records stay in SQLite</h2>
+  <p>Successful prediction results are stored locally in <code>database/security.db</code>. Submitted URLs are displayed with HTML escaping and stored using parameterized SQL.</p>
+</section>
+{% endblock %}

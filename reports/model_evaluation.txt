@@ -1,0 +1,34 @@
+Random Forest evaluation
+Dataset: dataset_phishing.csv
+Rows: 11430
+Input features: 13
+Split: stratified 80%/20%
+Random state: 42
+Positive (phishing) label: 'phishing'
+
+Training accuracy: 0.9514
+Testing accuracy: 0.8268
+Precision: 0.8380
+Recall: 0.8101
+F1-score: 0.8238
+
+Parameter search: {
+  "used": false,
+  "cv_folds": 0,
+  "best_params": {}
+}
+
+Confusion matrix (labels ['legitimate', 'phishing']):
+[[964 179]
+ [217 926]]
+
+Classification report:
+              precision    recall  f1-score   support
+
+  legitimate       0.82      0.84      0.83      1143
+    phishing       0.84      0.81      0.82      1143
+
+    accuracy                           0.83      2286
+   macro avg       0.83      0.83      0.83      2286
+weighted avg       0.83      0.83      0.83      2286
+

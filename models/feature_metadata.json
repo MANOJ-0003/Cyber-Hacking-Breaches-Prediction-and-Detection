@@ -1,0 +1,158 @@
+{
+  "model_type": "sklearn.pipeline.Pipeline(RandomForestClassifier)",
+  "model_scope": "offline_url_lexical_features",
+  "dataset_precomputed_features_used": false,
+  "dataset_preprocessing_notes": {
+    "input_rows": 11430,
+    "rows_with_whitespace_percent_encoded": [
+      4840,
+      5627,
+      8943
+    ],
+    "precomputed_features_used": false
+  },
+  "scope_note": "Trained on lexical features recomputed from raw URL text using the same offline extractor used at inference. The dataset's 87 precomputed URL, page-content, and external-service features were not used.",
+  "dataset_file": "dataset_phishing.csv",
+  "target_column": "status",
+  "input_feature_names": [
+    "url_length",
+    "hostname_length",
+    "uses_https",
+    "has_ip_host",
+    "num_dots",
+    "num_hyphens",
+    "num_at",
+    "num_digits",
+    "num_subdomains",
+    "has_suspicious_word",
+    "has_port",
+    "has_path",
+    "has_query"
+  ],
+  "input_feature_order": [
+    "url_length",
+    "hostname_length",
+    "uses_https",
+    "has_ip_host",
+    "num_dots",
+    "num_hyphens",
+    "num_at",
+    "num_digits",
+    "num_subdomains",
+    "has_suspicious_word",
+    "has_port",
+    "has_path",
+    "has_query"
+  ],
+  "transformed_feature_names": [
+    "numeric__url_length",
+    "numeric__hostname_length",
+    "numeric__uses_https",
+    "numeric__has_ip_host",
+    "numeric__num_dots",
+    "numeric__num_hyphens",
+    "numeric__num_at",
+    "numeric__num_digits",
+    "numeric__num_subdomains",
+    "numeric__has_suspicious_word",
+    "numeric__has_port",
+    "numeric__has_path",
+    "numeric__has_query"
+  ],
+  "label_values": [
+    "legitimate",
+    "phishing"
+  ],
+  "label_mapping": {
+    "phishing": "phishing",
+    "legitimate": "legitimate",
+    "source": "confirmed by semantic target value or explicit positive_label argument"
+  },
+  "positive_label": "phishing",
+  "preprocessing": {
+    "numeric_missing_values": "median imputer fitted on training data",
+    "categorical_missing_values": "most-frequent imputer fitted on training data",
+    "categorical_encoding": "OneHotEncoder(handle_unknown='ignore') fitted on training data",
+    "pipeline_included_in_model_file": true
+  },
+  "split": {
+    "test_size": 0.2,
+    "stratified": true,
+    "random_state": 42
+  },
+  "parameter_search": {
+    "used": false,
+    "cv_folds": 0,
+    "best_params": {}
+  },
+  "evaluation": {
+    "training_accuracy": 0.9514435695538058,
+    "testing_accuracy": 0.8267716535433071,
+    "precision": 0.8380090497737557,
+    "recall": 0.8101487314085739,
+    "f1_score": 0.8238434163701067,
+    "positive_label": "phishing",
+    "confusion_matrix": [
+      [
+        964,
+        179
+      ],
+      [
+        217,
+        926
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "legitimate",
+      "phishing"
+    ],
+    "classification_report": {
+      "legitimate": {
+        "precision": 0.8162574089754445,
+        "recall": 0.8433945756780402,
+        "f1-score": 0.8296041308089501,
+        "support": 1143.0
+      },
+      "phishing": {
+        "precision": 0.8380090497737557,
+        "recall": 0.8101487314085739,
+        "f1-score": 0.8238434163701067,
+        "support": 1143.0
+      },
+      "accuracy": 0.8267716535433071,
+      "macro avg": {
+        "precision": 0.8271332293746001,
+        "recall": 0.8267716535433071,
+        "f1-score": 0.8267237735895284,
+        "support": 2286.0
+      },
+      "weighted avg": {
+        "precision": 0.8271332293746001,
+        "recall": 0.8267716535433071,
+        "f1-score": 0.8267237735895283,
+        "support": 2286.0
+      }
+    }
+  },
+  "feature_importance": {
+    "numeric__url_length": 0.25877781343227974,
+    "numeric__hostname_length": 0.19906036976790065,
+    "numeric__uses_https": 0.022749179254750687,
+    "numeric__has_ip_host": 0.0036049586615816303,
+    "numeric__num_dots": 0.05010922053837927,
+    "numeric__num_hyphens": 0.10027019817025745,
+    "numeric__num_at": 0.005729242115280126,
+    "numeric__num_digits": 0.1683526791764437,
+    "numeric__num_subdomains": 0.05261588595604368,
+    "numeric__has_suspicious_word": 0.07325617084113269,
+    "numeric__has_port": 0.0014804187097716694,
+    "numeric__has_path": 0.03074538997728797,
+    "numeric__has_query": 0.03324847339889068
+  },
+  "artifacts": {
+    "model": "M:\\cybersecurity-cyber-threat-detection\\models\\random_forest_model.pkl",
+    "confusion_matrix": "M:\\cybersecurity-cyber-threat-detection\\reports\\confusion_matrix.png",
+    "feature_importance": "M:\\cybersecurity-cyber-threat-detection\\reports\\feature_importance.png",
+    "evaluation_report": "M:\\cybersecurity-cyber-threat-detection\\reports\\model_evaluation.txt"
+  }
+}
